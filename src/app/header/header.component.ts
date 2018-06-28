@@ -11,10 +11,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  toggle = true;
   collapseSideBar() {
-    console.log("*******");
-    // $('#sidebar').toggleClass('active');
-    // this.toggleClass('active');
+    this.toggle = !this.toggle;
   }
 }
