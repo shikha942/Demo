@@ -1,0 +1,21 @@
+.text-align{
+  text-align: center;
+}
+
+.header-color{
+  color: white;
+}
+
+.width-30{
+  width: 34%;
+}
+
+.margin-left-33{
+  margin-left: 33%;
+}
+
+.post-btn{
+  background-color: white;
+color: #007bff;
+border-color: #007bff;
+}

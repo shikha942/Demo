@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
+//  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
