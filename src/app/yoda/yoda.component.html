@@ -1,0 +1,9 @@
+<form class="text-align" [formGroup]="yodaform" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>
+        <h1 class="header-color">Ask Question</h1>
+      </label>
+      <textarea formControlName="question" class="form-control width-30 margin-left-33" id="exampleTextarea" rows="4"></textarea>
+    </div>
+    <button type="submit" class="btn post-btn">Submit</button>
+  </form>

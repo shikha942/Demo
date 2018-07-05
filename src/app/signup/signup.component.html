@@ -1,0 +1,43 @@
+<alert></alert>
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width-input">
+        <input matInput placeholder="Name" formControlName="name" required>
+        <mat-error *ngIf="isFieldInvalid('name')">
+            Please enter Name
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width-input">
+        <input type="email" matInput placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="isFieldInvalid('email')">
+            Please enter Email
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width-input">
+        <input matInput placeholder="Mobile" formControlName="mobile" required>
+        <mat-error *ngIf="isFieldInvalid('mobile')">
+            Please enter Mobile Number
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Password" formControlName="password" required>
+        <mat-error *ngIf="isFieldInvalid('password')">
+            Invalid Password
+        </mat-error>
+    </mat-form-field>
+    <label class="password-label">(*Password must contain minimum 8 characters mixed cases, numbers and symbols)</label>
+    <mat-form-field class="full-width-input">
+        <input matInput type="password" placeholder="Confirm Password" formControlName="confirmPassword" required validateEqual="password">
+        <mat-error *ngIf="isFieldInvalid('confirmPassword')">
+            Password's does not match
+        </mat-error>
+    </mat-form-field>
+    <div>
+        <mat-checkbox>
+            <div [innerHtml]="checkbox1"></div>
+        </mat-checkbox>
+        <mat-checkbox>
+            <a>I accept terms and conditions</a>
+        </mat-checkbox>
+    </div>
+    <button mat-raised-button color="primary" type="submit">SignUp</button>
+</form>

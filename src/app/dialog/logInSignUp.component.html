@@ -1,0 +1,14 @@
+<mat-dialog-content [formGroup]="form">
+  <mat-tab-group>
+    <mat-tab label="Log In">
+      <ng-template matTabContent>
+        <app-login></app-login>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Sign Up">
+      <ng-template matTabContent>
+          <app-signup></app-signup>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>

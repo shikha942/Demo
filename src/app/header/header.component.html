@@ -1,51 +1,74 @@
 <div class="wrapper">
-
-    <nav id="sidebar">
-        <!-- Sidebar Header -->
+    <!-- Sidebar Holder -->
+    <nav id="sidebar" [ngClass]="toggle ? 'active' : 'danger'">
         <div class="sidebar-header">
-            <h3>Collapsible Sidebar</h3>
+            <h3>{{userName}}</h3>
         </div>
 
 
-        <!-- Sidebar Links -->
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#">Home</a>
+                <a href="#homeSubmenu">Questions</a>
             </li>
             <li>
-                <a href="#">About</a>
+                <a href="#">Articles</a>
+                <a href="#pageSubmenu">Funnies</a>
             </li>
             <li>
-                <!-- Link with dropdown items -->
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Page</a>
-                    </li>
-                    <li>
-                        <a href="#">Page</a>
-                    </li>
-                    <li>
-                        <a href="#">Page</a>
-                    </li>
-                </ul>
-                <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+                <a href="#">Our Sexperts</a>
+            </li>
+            <li>
+                <a href="#">Change Password</a>
+            </li>
+            <li>
+                <a href="#">My Profile</a>
+            </li>
+            <li>
+                <a href="#">Terms & Conditions</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+            <li>
+                <a href="#">Settings</a>
+            </li>
+            <li>
+                <a href="#">Logout</a>
+            </li>
         </ul>
+
     </nav>
 
-    <div id="content">
-        <button type="button" id="sidebarCollapse" class="navbar-btn" ng-click="">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div>
+    <!-- Page Content Holder -->
+    <div id="content" style="background: url('../assets/images/home.svg')">
 
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn" (click)="collapseSideBar()" [ngClass]="toggle ? 'active' : 'danger'">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <i class="fas fa-align-justify"></i> -->
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <i class="fa fa-user-circle align-icon"></i>
+                        <li class="nav-item">
+                            <span class="nav-link" (click)="openDialog()">Log In/Sign Up</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login">{{userName}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <router-outlet></router-outlet>
+
     </div>
 </div>

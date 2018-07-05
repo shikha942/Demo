@@ -1,0 +1,9 @@
+.full-width-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+.password-label {
+    font-size: 12px;
+    margin-top: -8px;
+}
